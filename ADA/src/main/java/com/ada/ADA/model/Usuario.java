@@ -32,6 +32,9 @@ public class Usuario {
 	@Size(min = 6, max = 20)
 	private String senha; // Será usado para segurança e entrada da usuária na rede social. Terá no máximo 20 caracteres
 	
+	@Size (min = 5 , max = 50)
+	private String link;
+	
 	//Início getters and setters
 	
 	public long getId_usuario() {
@@ -64,6 +67,11 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
 	//Fim getters and setters
 }

@@ -22,15 +22,8 @@ import javax.validation.constraints.Size;
 	private String descricaoTema; //Tema usado para descrever a postagem e pesquisa. Terá no máximo 50 caracteres. 
 	
 	@NotNull
-	@Size(min = 2 , max = 50)
-	private String descricaoDuvida; //Usado para pesquisar no fórum pesquisa de tópicos. Terá no máximo 50 caracteres. 
-	
-	@NotNull
-	private boolean vaga; // Usado para pesquisar vagas de emprego na Rede Social. 
-	
-	@NotNull
-	private boolean duvida; //Usado para checar se a usuária deseja postar no fórum pesquisa de tópicos.
-		
+	@Size (min = 2 , max = 50)
+	private String tipoTema;
 	
 //Início Getters and Setters
 	
@@ -49,31 +42,14 @@ import javax.validation.constraints.Size;
 	public void setDescricaoTema(String descricaoTema) {
 		this.descricaoTema = descricaoTema;
 	}
-	
-	public boolean isVaga() {
-		return vaga;
+
+	public String getTipoTema() {
+		return tipoTema;
 	}
-	
-	public void setVaga(boolean vaga) {
-		this.vaga = vaga;
+
+	public void setTipoTema(String tipoTema) {
+		this.tipoTema = tipoTema;
 	}
-	
-	public String getDescricaoDuvida() {
-		return descricaoDuvida;
-	}
-	
-	public void setDescricaoDuvida(String descricaoDuvida) {
-		this.descricaoDuvida = descricaoDuvida;
-	}
-	
-	public boolean isDuvida() {
-		return duvida;
-	}
-	
-	public void setDuvida(boolean duvida) {
-		this.duvida = duvida;
-	}
-	
 //Fim Getters and Setters
 	
 	

@@ -41,8 +41,17 @@ public class Postagem {
 	@Temporal(TemporalType.TIMESTAMP) // Anotation utilizado para adição de uma data. TIMESTAMP = data e hora
 	private Date dataHora = new java.sql.Date(System.currentTimeMillis()); // Informará a data/hora das postagens.
 	
+	@Size(min = 5 , max = 10)
+	private String link;
+	
 	//Início dos getters e setters
 	
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
 	public String getDescricao_postagem() {
 		return descricao_postagem;
 	}
