@@ -2,6 +2,7 @@ package com.ada.ADA.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,27 +24,24 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long postagem_id; // Identificador único da postagem
 	
-	//@NotNull
-	//@ManyToOne
-	//@JsonIgnoreProperties("postagem")
-	//private Usuario usuario; // Chave estrangeira com o numero do usuário
-	
-	//@NotNull
-	//@ManyToOne
-	//@JsonIgnoreProperties("tema")
-	//private Tema tema; // Chave estrangeira com o numero do tema
-	
 	@NotNull
 	@Size(min = 2 , max = 2000)
-	private String descricaoPostagem; // Local para escrita das informações das usuárias na rede social. Terá no máximo 2000 caracteres. 
+	private String descricaoPostagem; 		// Local para escrita das informações das usuárias na rede social. Terá no máximo 2000 caracteres. 
 	
-	@Temporal(TemporalType.TIMESTAMP) // Anotation utilizado para adição de uma data. TIMESTAMP = data e hora
+	@Temporal(TemporalType.TIMESTAMP) 		// Anotation utilizado para adição de uma data. TIMESTAMP = data e hora
 	private Date dataHora = new java.sql.Date(System.currentTimeMillis()); // Informará a data/hora das postagens.
 	
 	@Size(min = 5, max = 2000)
 	private String link;
 
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario; 				// Chave estrangeira com o numero do usuário
 	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Tema tema; 						// Chave estrangeira com o numero do tema
+
 	//Início dos getters e setters
 	
 	public long getPostagem_id() {
@@ -53,23 +51,7 @@ public class Postagem {
 	public void setPostagem_id(long postagem_id) {
 		this.postagem_id = postagem_id;
 	}
-	/*
-	public Usuario getUsuario() {
-		return usuario;
-	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-	
-	public Tema getTema() {
-		return tema;
-	}
-
-	public void setTema(Tema tema) {
-		this.tema = tema;
-	}
-	*/
 	public String getDescricaoPostagem() {
 		return descricaoPostagem;
 	}
@@ -92,6 +74,22 @@ public class Postagem {
 
 	public void setLink(String link) {
 		this.link = link;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
 	}
 
 	//Fim dos getters e setters
