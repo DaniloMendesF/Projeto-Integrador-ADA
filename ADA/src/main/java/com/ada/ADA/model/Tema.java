@@ -8,7 +8,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
 @Entity
 @Table(name = "tb_tema")
 public class Tema {
@@ -50,8 +49,5 @@ public String getTipoTema() {
 public void setTipoTema(String tipoTema) {
 	this.tipoTema = tipoTema;
 }
-	
-//Fim Getters and Setters
-	
-	
+//Fim Getters and Setters	
 }

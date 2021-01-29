@@ -34,7 +34,7 @@ public class Usuario {
 	
 	@Size(min = 5, max = 2000)
 	private String link; 
-	
+  
 	//Início getters and setters
 	
 	public long getId_usuario() {
@@ -73,6 +73,5 @@ public class Usuario {
 	public void setLink(String link) {
 		this.link = link;
 	}
-	
 	//Fim getters and setters
 }
