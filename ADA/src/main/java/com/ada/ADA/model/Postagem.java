@@ -42,10 +42,15 @@ public class Postagem {
 	private Date dataHora = new java.sql.Date(System.currentTimeMillis()); // Informará a data/hora das postagens.
 	
 	@Size(min = 5, max = 2000)
+
 	private String link;
 	
 	//Início dos getters e setters
 	
+	public String getLink() {
+		return link;
+	}
+
 	public String getDescricao_postagem() {
 		return descricao_postagem;
 	}
@@ -79,9 +84,5 @@ public class Postagem {
 	public String getLink() {
 		return link;
 	}
-	public void setLink(String link) {
-		this.link = link;
-	}
-	
 	//Fim dos getters e setters
 }
