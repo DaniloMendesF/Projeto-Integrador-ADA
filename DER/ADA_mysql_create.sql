@@ -4,6 +4,7 @@ CREATE TABLE `Postagem` (
 	`Tema` bigint NOT NULL,
 	`Descricao_postagem` varchar(2000) NOT NULL,
 	`DataHora` DATETIME(8) NOT NULL,
+	`Link` varchar(255) NOT NULL,
 	PRIMARY KEY (`ID_postagem`)
 );
 
@@ -13,15 +14,14 @@ CREATE TABLE `Usuário` (
 	`Cargo` varchar(50) NOT NULL,
 	`E-mail` varchar(1000) NOT NULL,
 	`Senha` varchar(12) NOT NULL,
+	`Link` varchar(255) NOT NULL,
 	PRIMARY KEY (`ID_usuario`)
 );
 
 CREATE TABLE `Tema` (
 	`ID_tema` bigint NOT NULL AUTO_INCREMENT,
 	`Descricao_tema` varchar(50) NOT NULL,
-	`Vaga` BOOLEAN NOT NULL,
-	`Descricao_duvida` varchar(50) NOT NULL,
-	`Duvida` BOOLEAN NOT NULL,
+	`tipoTema` varchar(255) NOT NULL,
 	PRIMARY KEY (`ID_tema`)
 );
 

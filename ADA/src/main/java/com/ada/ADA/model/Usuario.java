@@ -43,6 +43,7 @@ public class Usuario {
 	private String senha; // Será usado para segurança e entrada da usuária na rede social. Terá no máximo 20 caracteres
 	
 	@Size(min = 5, max = 2000)
+
 	private String link;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -106,6 +107,6 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
+
 	//Fim getters and setters
 }
