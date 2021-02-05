@@ -49,11 +49,6 @@ public class UsuarioController {
 		return ResponseEntity.ok(repository.findAllBycargoContainingIgnoreCase(cargo));
 	}
 	
-	@GetMapping("/email/{email}")
-	public ResponseEntity<List<Usuario>> getByEmail (@PathVariable String email) {
-		return ResponseEntity.ok(repository.findAllByemailContainingIgnoreCase(email));
-	}
-	
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Usuario>> getByNome (@PathVariable String nome) {
 		return ResponseEntity.ok(repository.findAllBynomeCompletoContainingIgnoreCase(nome));
@@ -75,7 +70,7 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/cadastro")
-	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
+	public ResponseEntity<Usuario> Post (@RequestBody Usuario usuario) {
 		Optional<Usuario> user = usuarioService.CadastrarUsuario(usuario);
 		try {
 			return ResponseEntity.ok(user.get());
@@ -86,7 +81,7 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/login")
-	public ResponseEntity<UserLogin> Autentication(@RequestBody Optional<UserLogin> user) {
+	public ResponseEntity<UserLogin> Autentication (@RequestBody Optional<UserLogin> user) {
 		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
