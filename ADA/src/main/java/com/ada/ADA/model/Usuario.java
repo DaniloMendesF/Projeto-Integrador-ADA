@@ -39,7 +39,11 @@ public class Usuario {
 	private String email; // Para o cadastro de acesso da usuária na rede social. Terá no máximo 1000 caracteres.
 	
 	@NotBlank
-	@Size(min = 6, max = 20)
+	@Size(min = 5, max = 100)
+	private String usuario;
+	
+	@NotBlank
+	@Size(min = 5, max = 100)
 	private String senha; // Será usado para segurança e entrada da usuária na rede social. Terá no máximo 20 caracteres
 	
 	@Size(min = 5, max = 2000)
@@ -82,6 +86,14 @@ public class Usuario {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getSenha() {
