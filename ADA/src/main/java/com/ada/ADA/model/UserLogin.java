@@ -3,9 +3,7 @@ package com.ada.ADA.model;
 public class UserLogin {
 	
 	private String nomeCompleto;
-	
-	private String email;
-	
+
 	private String usuario;
 	
 	private String cargo;
@@ -19,20 +17,14 @@ public class UserLogin {
 	
 
 	//Início Getters/Setters
+	
+	
 	public String getNomeCompleto() {
 		return nomeCompleto;
 	}
 
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getUsuario() {
@@ -42,7 +34,7 @@ public class UserLogin {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	
+
 	public String getCargo() {
 		return cargo;
 	}
@@ -58,7 +50,7 @@ public class UserLogin {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
 	public String getLink() {
 		return link;
 	}
@@ -66,7 +58,7 @@ public class UserLogin {
 	public void setLink(String link) {
 		this.link = link;
 	}
-	
+
 	public String getToken() {
 		return token;
 	}
@@ -74,6 +66,8 @@ public class UserLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
+
 	
+	//Fim Getters/Setters
 	
 }

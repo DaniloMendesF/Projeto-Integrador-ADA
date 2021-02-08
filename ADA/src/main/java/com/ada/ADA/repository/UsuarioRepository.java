@@ -11,7 +11,6 @@ import com.ada.ADA.model.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	public List<Usuario> findAllBycargoContainingIgnoreCase 	   (String cargo);
-	public List<Usuario> findAllByemailContainingIgnoreCase 	   (String email);
 	public List<Usuario> findAllBynomeCompletoContainingIgnoreCase (String nomeCompleto);
 	public Optional<Usuario> findByUsuario (String usuario);
 }
