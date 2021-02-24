@@ -45,11 +45,13 @@ public class UsuarioService {
 
                 //Informações devolvidas quando o LOGIN será feito
                 user.get().setToken(authHeader);
+                user.get().setId(usuario.get().getId());
                 user.get().setNomeCompleto(usuario.get().getNomeCompleto());
                 user.get().setCargo(usuario.get().getCargo());
                 user.get().setUsuario(usuario.get().getUsuario());
-                user.get().setSenha(usuario.get().getSenha());
                 user.get().setLink(usuario.get().getLink());
+                user.get().setFoto(usuario.get().getFoto());
+                user.get().setTipo(usuario.get().getTipo());
 
                 return user;
 
