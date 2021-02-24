@@ -1,31 +1,31 @@
 CREATE TABLE `Postagem` (
-	`ID_postagem` bigint NOT NULL AUTO_INCREMENT,
-	`Usuario` bigint NOT NULL,
-	`Tema` bigint NOT NULL,
-	`Descricao_postagem` varchar(2000) NOT NULL,
-	`DataHora` DATETIME(8) NOT NULL,
-	`Link` varchar(255) NOT NULL,
-	PRIMARY KEY (`ID_postagem`)
+	`postagem_id` bigint NOT NULL,
+	`usuario` bigint NOT NULL,
+	`tema` bigint NOT NULL,
+	`descricaoPostagem` varchar(2000) NOT NULL,
+	`dataHora` DATETIME(8) NOT NULL,
+	`link` varchar(2000) NOT NULL,
+	PRIMARY KEY (`postagem_id`)
 );
 
 CREATE TABLE `Usuário` (
-	`ID_usuario` bigint NOT NULL AUTO_INCREMENT,
-	`Nome_Completo` varchar(255) NOT NULL,
-	`Cargo` varchar(50) NOT NULL,
-	`E-mail` varchar(1000) NOT NULL,
-	`Senha` varchar(12) NOT NULL,
-	`Link` varchar(255) NOT NULL,
-	PRIMARY KEY (`ID_usuario`)
+	`id` bigint NOT NULL,
+	`nomeCompleto` varchar(900) NOT NULL,
+	`cargo` varchar(50) NOT NULL,
+	`usuario` varchar(100) NOT NULL,
+	`senha` varchar(100) NOT NULL,
+	`link` varchar(2000) NOT NULL,
+	PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Tema` (
-	`ID_tema` bigint NOT NULL AUTO_INCREMENT,
-	`Descricao_tema` varchar(50) NOT NULL,
-	`tipoTema` varchar(255) NOT NULL,
-	PRIMARY KEY (`ID_tema`)
+	`id` bigint NOT NULL,
+	`descricaoTema` varchar(50) NOT NULL,
+	`tipoTema` varchar(50) NOT NULL,
+	PRIMARY KEY (`id`)
 );
 
-ALTER TABLE `Postagem` ADD CONSTRAINT `Postagem_fk0` FOREIGN KEY (`Usuario`) REFERENCES `Usuário`(`ID_usuario`);
+ALTER TABLE `Postagem` ADD CONSTRAINT `Postagem_fk0` FOREIGN KEY (`usuario`) REFERENCES `Usuário`(`id`);
 
-ALTER TABLE `Postagem` ADD CONSTRAINT `Postagem_fk1` FOREIGN KEY (`Tema`) REFERENCES `Tema`(`ID_tema`);
+ALTER TABLE `Postagem` ADD CONSTRAINT `Postagem_fk1` FOREIGN KEY (`tema`) REFERENCES `Tema`(`id`);
 
