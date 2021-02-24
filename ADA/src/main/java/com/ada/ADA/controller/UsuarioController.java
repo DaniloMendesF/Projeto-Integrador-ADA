@@ -22,7 +22,7 @@ import com.ada.ADA.repository.UsuarioRepository;
 import com.ada.ADA.service.UsuarioService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin("*")
 @RequestMapping("/usuario")
 public class UsuarioController {
 
@@ -80,7 +80,7 @@ public class UsuarioController {
 
 	}
 
-	@PostMapping("/logar")
+	@PostMapping("/entrar")
 	public ResponseEntity<UserLogin> Autentication (@RequestBody Optional<UserLogin> user) {
 		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
