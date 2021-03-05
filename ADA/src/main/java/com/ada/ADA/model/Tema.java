@@ -30,7 +30,7 @@ public class Tema {
 	@Size(min = 1, max = 50)
 	private String tipoTema; // vaga, duvida
 	
-	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
 	
