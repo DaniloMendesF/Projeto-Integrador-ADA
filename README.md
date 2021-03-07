@@ -22,7 +22,8 @@ O projeto tem como finalidade criar uma **rede de comunidade para mulheres no me
 
 
 #### **Backend:** [Spring Boot](https://spring.io/projects/spring-boot) + [Java 8](https://www.java.com/pt-BR/) + [MySQL](https://www.mysql.com/)
-#### **Frontend:** [Angular](https://angular.io/) Em construção 🚧
+#### **Frontend:** [Angular](https://angular.io/) + [TypeScript](https://www.typescriptlang.org/)
+#### **Link Repositório Frontend:** [front-ProjetoIntegrador-ADA](https://github.com/Rafaelaoliveira-1/front-ProjetoIntegrador-ADA)
 
 
 ## **:heavy_check_mark: COMO UTILIZAR**
